@@ -1,42 +1,52 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
+import { StyleSheet, Text, View, TextInput, SafeAreaView } from 'react-native';
+import Button1 from './components/Button1';
+import Button2 from './components/Button2';
+import Button3 from './components/Button3';
+import InputText1 from './components/InputText1';
+import InputText2 from './components/InputText2';
 
 export default function App() {
+
   return (
     <View style={ styles.container }>
       <StatusBar style="auto" />
-      <Text style={ styles.text }>สร้างการประชุม</Text>
-      <Text style={ styles.text2 }>ชื่อการประชุม</Text>
-      <Text style={ styles.text2 }>รายละเอียดการประชุม</Text>
-      <Text style={ styles.text2 }>ไฟล์แนบ</Text>
-      <TouchableOpacity
-        onPress={() => alert('Hello, world!')}
-        style={ styles.button1 }>
-        <Text style={ styles.buttontext }>เพิ่มไฟล์</Text>
-      </TouchableOpacity>
-      <Text style={ styles.text2 }>แท็ก</Text>
-      <TouchableOpacity
-        onPress={() => alert('Hello, world!')}
-        style={ styles.button1 }>
-        <Text style={ styles.buttontext }>เพิ่มแท็ก</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => alert('Hello, world!')}
-        style={ styles.button2 }>
-        <Text style={ styles.buttontext2 }>บันทึก</Text>
-      </TouchableOpacity>
+      <View style={ styles.lefttext1 }>
+        <Text style={ styles.text }>สร้างการประชุม</Text>
+        <Text style={ styles.text2 }>ชื่อการประชุม</Text>
+      </View>
+      <InputText1/>
+      <View style={ styles.lefttext2 }><Text style={ styles.text2 }>รายละเอียดการประชุม</Text></View>
+      <InputText2/>
+      <View style={ styles.lefttext3 }><Text style={ styles.text2 }>ไฟล์แนบ</Text></View>
+      <Button1/>
+      <View style={ styles.lefttext4 }><Text style={ styles.text }>แท็ก</Text></View>
+      <Button2/>
+      <Button3/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  lefttext1: {
+    paddingRight: 200,
+  },
+  lefttext2: {
+    paddingRight: 150,
+  },
+  lefttext3: {
+    paddingRight: 250,
+  },
+  lefttext4: {
+    paddingRight: 280,
   },
   text: {
     color: '#058AFA',
@@ -54,42 +64,5 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontWeight: 'bold',
   },
-  button1: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#058AFA',
-    elevation: 3,
-    backgroundColor: 'white',
-    width: '90%',
-  },
-  button2: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#058AFA',
-    elevation: 3,
-    backgroundColor: '#058AFA',
-    width: '90%',
-  },
-  buttontext: {
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color: '#058AFA'
-  },
-  buttontext2: {
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color: 'white'
-  },
+
 });
