@@ -1,8 +1,18 @@
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
+import AppLoading from 'expo-app-loading';
+import { useFonts, Prompt_100Thin, Prompt_700Bold, } from '@expo-google-fonts/prompt';
 
 export default function Button1() {
+
+  let [fontsLoaded] = useFonts({
+    Prompt_100Thin, Prompt_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   return (
     <View style={ styles.container }>
       <TouchableOpacity
@@ -36,6 +46,7 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: '#058AFA'
+    color: '#058AFA',
+    fontFamily: 'Prompt_700Bold',
   },
 });

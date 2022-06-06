@@ -6,8 +6,18 @@ import Button2 from './components/Button2';
 import Button3 from './components/Button3';
 import InputText1 from './components/InputText1';
 import InputText2 from './components/InputText2';
+import AppLoading from 'expo-app-loading';
+import { useFonts, Prompt_100Thin, Prompt_700Bold, } from '@expo-google-fonts/prompt';
 
 export default function App() {
+
+  let [fontsLoaded] = useFonts({
+    Prompt_100Thin, Prompt_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
 
   return (
     <View style={ styles.container }>
@@ -33,6 +43,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'flex-start',
     justifyContent: 'center',
+    fontFamily: 'Prompt_700Bold',
 
   },
   text: {
@@ -42,6 +53,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     textAlign: 'left',
     fontWeight: 'bold',
+    fontFamily: 'Prompt_700Bold',
   },
   text2: {
     color: 'black',
@@ -50,6 +62,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     textAlign: 'left',
     fontWeight: 'bold',
+    fontFamily: 'Prompt_700Bold',
   },
   center: {
     width: '100%',
