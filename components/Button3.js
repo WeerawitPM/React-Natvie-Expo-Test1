@@ -7,7 +7,7 @@ export default function Button3() {
     <TouchableOpacity
       onPress={() => alert('Hello, world!')}
       style={ styles.button }>
-      <Text style={ styles.buttontext }>เพิ่มไฟล์</Text>
+      <Text style={ styles.buttontext }>บันทึก</Text>
     </TouchableOpacity>
   );
 }
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     borderColor: '#058AFA',
     elevation: 3,
     backgroundColor: '#058AFA',
-    width: '90%',
+    width: '100%',
   },
   buttontext: {
     fontSize: 16,

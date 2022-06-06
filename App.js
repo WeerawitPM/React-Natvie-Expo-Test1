@@ -12,18 +12,16 @@ export default function App() {
   return (
     <View style={ styles.container }>
       <StatusBar style="auto" />
-      <View style={ styles.lefttext1 }>
-        <Text style={ styles.text }>สร้างการประชุม</Text>
-        <Text style={ styles.text2 }>ชื่อการประชุม</Text>
-      </View>
-      <InputText1/>
-      <View style={ styles.lefttext2 }><Text style={ styles.text2 }>รายละเอียดการประชุม</Text></View>
-      <InputText2/>
-      <View style={ styles.lefttext3 }><Text style={ styles.text2 }>ไฟล์แนบ</Text></View>
-      <Button1/>
-      <View style={ styles.lefttext4 }><Text style={ styles.text }>แท็ก</Text></View>
-      <Button2/>
-      <Button3/>
+      <Text style={ styles.text }>สร้างการประชุม</Text>
+      <Text style={ styles.text2 }>ชื่อการประชุม</Text>
+      <View style= { styles.center }><InputText1/></View>
+      <Text style={ styles.text2 }>รายละเอียดการประชุม</Text>
+      <View style= { styles.center }><InputText2/></View>
+      <Text style={ styles.text2 }>ไฟล์แนบ</Text>
+      <View style= { styles.center }><Button1/></View>
+      <Text style={ styles.text2 }>แท็ก</Text>
+      <View style= { styles.center }><Button2/></View>
+      <View style= { styles.center }><Button3/></View>
     </View>
   );
 }
@@ -33,25 +31,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'center',
-  },
-  lefttext1: {
-    paddingRight: 200,
-  },
-  lefttext2: {
-    paddingRight: 150,
-  },
-  lefttext3: {
-    paddingRight: 250,
-  },
-  lefttext4: {
-    paddingRight: 280,
+
   },
   text: {
     color: '#058AFA',
     fontSize: 18,
-    marginHorizontal: 15,
+    marginHorizontal: 20,
     marginBottom: 10,
     textAlign: 'left',
     fontWeight: 'bold',
@@ -59,10 +46,14 @@ const styles = StyleSheet.create({
   text2: {
     color: 'black',
     fontSize: 18,
-    marginHorizontal: 15,
+    marginHorizontal: 20,
     marginBottom: 10,
     textAlign: 'left',
     fontWeight: 'bold',
   },
-
+  center: {
+    width: '100%',
+    paddingLeft: 18,
+    paddingRight: 18,
+  }
 });
